@@ -1,0 +1,19 @@
+<%= form_with model: meeting_room, remote: true, class: 'divTableRow', id: dom_id(meeting_room, 'inline_form') do |form| %>
+<div class='divTableCell'>
+    <%= form.number_field :code %>
+</div>
+
+<div class='divTableCell'>
+    <%= form.text_field :name %>
+</div>
+
+<div class='divTableCell'>
+    <%= form.text_area :description %>
+</div>
+
+<div class='divTableCell'>
+    <%= button_tag(type: 'submit', class: 'btn btn-success btn-xs') do %>
+    <i class='fas fa-save'></i>&nbsp;&nbsp;Salva
+    <% end %>
+</div>
+<% end %>

@@ -1,0 +1,21 @@
+<% if big_room.booked == 'NO' %>
+<div class='divTableCell'>
+    <strong class='text-success'>
+        <%= l(big_room.start_time, format: '%H:%M') %>
+        -
+        <%= l(big_room.end_time, format: '%H:%M') %>
+    </strong>
+</div>
+<div class='divTableCell'>
+    <%= link_to edit_big_room_path(big_room), remote: true, class: 'text-success', title: '<em>Prenota&nbsp;</em>', 'data-toggle' => 'tooltip', 'data-html' => 'true' do %>
+    <i class='fas fa-edit'></i>
+    <% end %>
+</div>
+<% else %>
+<div class='divTableCell'>
+    <strong class='text-primary' data-toggle='tooltip' data-html='true'
+        title='<em>Prenotato da:&nbsp;</em> <b>&nbsp;<%= big_room.category %></b>'>
+        PRENOTATO
+    </strong>
+</div>
+<% end %>

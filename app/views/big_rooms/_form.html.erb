@@ -1,0 +1,47 @@
+<%= form_with(model: big_room, remote: true) do |form| %>
+<% if big_room.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(big_room.errors.count, "error") %> prohibited this big_room from being saved:</h2>
+
+  <ul>
+    <% big_room.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="field">
+  <%= form.label :name %>
+  <%= form.number_field :name %>
+</div>
+
+<div class="field">
+  <%= form.label :start_time %>
+  <%= form.datetime_select :start_time %>
+</div>
+
+<div class="field">
+  <%= form.label :end_time %>
+  <%= form.datetime_select :end_time %>
+</div>
+
+<div class="field">
+  <%= form.label :bookable %>
+  <%= form.text_field :bookable %>
+</div>
+
+<div class="field">
+  <%= form.label :booked %>
+  <%= form.text_field :booked %>
+</div>
+
+<div class="field">
+  <%= form.label :category %>
+  <%= form.text_field :category %>
+</div>
+
+<div class="actions">
+  <%= form.submit %>
+</div>
+<% end %>

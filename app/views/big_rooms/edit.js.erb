@@ -1,0 +1,2 @@
+document.getElementById('<%= dom_id(@big_room) %>').insertAdjacentHTML('afterend', "<%= j render 'inline_form', big_room: @big_room %>")
+document.getElementById('<%= dom_id(@big_room) %>').style.display = 'none'

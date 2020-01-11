@@ -1,0 +1,22 @@
+<h3>
+  <%= inline_svg_tag('meeting_room_logo.svg', size: '52px * 36px', preserve_aspect_ratio: 'xMaxYMax meet') %>
+  &nbsp;&nbsp;&nbsp;Sale Prenotabili
+</h3>
+<hr />
+<div class='divTable redTable'>
+  <div class='divTableHeading'>
+    <div class='divTableRow'>
+      <div class='divTableHead'>Codice</div>
+      <div class='divTableHead'>Nome</div>
+      <div class='divTableHead'>Descrizione</div>
+      <div class='divTableHead'>&nbsp;</div>
+    </div>
+  </div>
+  <div class='divTableBody'>
+    <% @meeting_rooms.each do |meeting_room| %>
+    <%= content_tag :div, class: 'divTableRow', id: dom_id(meeting_room) do %>
+    <%= render meeting_room %>
+    <% end %>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+<%= form_with model: big_room, remote: true, class: 'divTableRow', id: dom_id(big_room, 'inline_form') do |form| %>
+<div class='divTableCell'>
+    Prenotare?&nbsp;
+    <%= form.select :booked, ['SI', 'NO'], :include_blank => false, class: 'form-control' %>
+    <%= button_tag(type: 'submit', class: 'btn btn-success btn-xs') do %>
+    <i class='fas fa-save'></i>
+    <% end %>
+</div>
+<% end %>

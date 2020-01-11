@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: UTF8
+  username: booking
+  password: Dfr368qE
+  host: localhost
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: DBooking_development
+
+test:
+  <<: *default
+  database: DBooking_test
+
+production:
+  <<: *default
+  database: DBooking_production
+  username: DBooking
+  password: <%= ENV['DBOOKING_DATABASE_PASSWORD'] %>

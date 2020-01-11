@@ -1,0 +1,423 @@
+// Cosmo 3.4.1
+// Bootswatch
+// -----------------------------------------------------
+
+$web-font-path: 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' !default;
+@import url($web-font-path);
+
+// Navbar =====================================================================
+
+.navbar {
+
+  &-inverse {
+
+    .badge {
+      background-color: #fff;
+      color: $brand-primary;
+    }
+  }
+}
+
+// Buttons ====================================================================
+
+// Typography =================================================================
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+.text-primary,
+.text-primary:hover {
+  color: $brand-primary;
+}
+
+.text-success,
+.text-success:hover {
+  color: $brand-success;
+}
+
+.text-danger,
+.text-danger:hover {
+  color: $brand-danger;
+}
+
+.text-warning,
+.text-warning:hover {
+  color: $brand-warning;
+}
+
+.text-info,
+.text-info:hover {
+  color: $brand-info;
+}
+
+// Tables =====================================================================
+
+table,
+.table {
+
+  a:not(.btn) {
+    text-decoration: none;
+  }
+
+  .dropdown-menu a {
+    text-decoration: none;
+  }
+
+  .success,
+  .warning,
+  .danger,
+  .info {
+    color: #fff;
+
+    a {
+      color: #fff;
+    }
+  }
+}
+
+// Forms ======================================================================
+
+
+.has-warning {
+  .help-block,
+  .control-label,
+  .radio,
+  .checkbox,
+  .radio-inline,
+  .checkbox-inline,
+  &.radio label,
+  &.checkbox label,
+  &.radio-inline label,
+  &.checkbox-inline label,
+  .form-control-feedback {
+    color: $brand-warning;
+  }
+
+  .form-control,
+  .form-control:focus,
+  .input-group-addon {
+    border: 1px solid $brand-warning;
+  }
+}
+
+.has-error {
+  .help-block,
+  .control-label,
+  .radio,
+  .checkbox,
+  .radio-inline,
+  .checkbox-inline,
+  &.radio label,
+  &.checkbox label,
+  &.radio-inline label,
+  &.checkbox-inline label,
+  .form-control-feedback {
+    color: $brand-danger;
+  }
+
+  .form-control,
+  .form-control:focus,
+  .input-group-addon {
+    border: 1px solid $brand-danger;
+  }
+}
+
+.has-success {
+  .help-block,
+  .control-label,
+  .radio,
+  .checkbox,
+  .radio-inline,
+  .checkbox-inline,
+  &.radio label,
+  &.checkbox label,
+  &.radio-inline label,
+  &.checkbox-inline label,
+  .form-control-feedback {
+    color: $brand-success;
+  }
+
+  .form-control,
+  .form-control:focus,
+  .input-group-addon {
+    border: 1px solid $brand-success;
+  }
+}
+
+// Navs =======================================================================
+
+.nav-pills {
+
+  & > li > a {
+    border-radius: 0;
+  }
+}
+
+.dropdown-menu {
+
+  & > li > a:hover,
+  & > li > a:focus {
+    background-image: none;
+  }
+}
+
+// Indicators =================================================================
+
+.close {
+  text-decoration: none;
+  text-shadow: none;
+  opacity: 0.4;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+}
+
+.alert {
+  border: none;
+
+  .alert-link {
+    text-decoration: underline;
+    color: #fff;
+  }
+}
+
+.label {
+  border-radius: 0;
+}
+
+// Progress bars ==============================================================
+
+.progress {
+  height: 8px;
+  @include box-shadow(none);
+  .progress-bar {
+    font-size: 8px;
+    line-height: 8px;
+  }
+}
+
+// Containers =================================================================
+
+.panel {
+  &-heading,
+  &-footer {
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+
+  &-default {
+    .close {
+      color: $text-color;
+    }
+  }
+}
+
+a.list-group-item {
+
+  &-success {
+    &.active {
+      background-color: $state-success-bg;
+    }
+
+    &.active:hover,
+    &.active:focus {
+      background-color: darken($state-success-bg, 5%);
+    }
+  }
+
+  &-warning {
+    &.active {
+      background-color: $state-warning-bg;
+    }
+    
+    &.active:hover,
+    &.active:focus {
+      background-color: darken($state-warning-bg, 5%);
+    }
+  }
+
+  &-danger {
+    &.active {
+      background-color: $state-danger-bg;
+    }
+    
+    &.active:hover,
+    &.active:focus {
+      background-color: darken($state-danger-bg, 5%);
+    }
+  }
+}
+
+.modal {
+  .close {
+    color: $text-color;
+  }
+}
+
+.popover {
+  color: $text-color;
+}
+
+// Custom =====================================================================
+
+body {
+  padding-top: 75px;
+}
+
+.text-blue {
+  color: $brand-blue;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.form-control-short {
+  @extend .form-control;
+  height: 30px;
+  width: 30px;
+}
+
+// Red Div Table
+
+div.redTable {
+  border: 0px solid #BB231F;
+  background-color: #DEDEDE;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+.divTable.redTable .divTableCell, .divTable.redTable .divTableHead {
+  border: 0px solid #9C9C9C;
+  padding: 3px 3px;
+}
+.divTable.redTable .divTableBody .divTableCell {
+  font-size: 14px;
+}
+.divTable.redTable .divTableRow:nth-child(even) {
+  background: #EEEEEE;
+}
+.divTable.redTable .divTableHeading {
+  background: #BB231F;
+  border-bottom: 3px solid #444444;
+}
+.divTable.redTable .divTableHeading .divTableHead {
+  font-size: 16px;
+  font-weight: normal;
+  color: #FFFFFF;
+  text-align: left;
+  border-left: 0px solid #BB231F;
+}
+.divTable.redTable .divTableHeading .divTableHead:first-child {
+  border-left: none;
+}
+
+.redTable .tableFootStyle {
+  font-size: 13px;
+}
+.redTable .tableFootStyle .links {
+	 text-align: right;
+}
+.redTable .tableFootStyle .links a{
+  display: inline-block;
+  background: #FFFFFF;
+  color: #A40808;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+.redTable.outerTableFooter {
+  border-top: none;
+}
+.redTable.outerTableFooter .tableFootStyle {
+  padding: 3px 5px; 
+}
+/* DivTable.com */
+.divTable{ display: table; }
+.divTableRow { display: table-row; }
+.divTableHeading { display: table-header-group;}
+.divTableCell, .divTableHead { display: table-cell;}
+.divTableHeading { display: table-header-group;}
+.divTableFoot { display: table-footer-group;}
+.divTableBody { display: table-row-group;}
+
+// Green div Table
+
+div.greenTable {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+  border: 0px solid #38B700;
+  background-color: #38B700;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+.divTable.greenTable .divTableCell, .divTable.greenTable .divTableHead {
+  border: 0px solid #38941C;
+  padding: 3px 3px;
+}
+.divTable.greenTable .divTableBody .divTableCell {
+  font-size: 13px;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+.greenTable .tableFootStyle {
+  font-size: 11px;
+}
+.greenTable .tableFootStyle .links {
+	 text-align: right;
+}
+.greenTable .tableFootStyle .links a{
+  display: inline-block;
+  background: #FFFFFF;
+  color: #24943A;
+  padding: 2px 8px;
+  border-radius: 5px;
+}
+.greenTable.outerTableFooter {
+  border-top: none;
+}
+.greenTable.outerTableFooter .tableFootStyle {
+  padding: 3px 5px; 
+}
+/* DivTable.com */
+.divTable{ display: table; }
+.divTableRow { display: table-row; }
+.divTableHeading { display: table-header-group;}
+.divTableCell, .divTableHead { display: table-cell;}
+.divTableHeading { display: table-header-group;}
+.divTableFoot { display: table-footer-group;}
+.divTableBody { display: table-row-group;}
+
+// Grey div Table
+
+div.greyTable {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 11px;
+  //border: 0px solid #fff;
+  //background-color: #fff;
+  width: 100%;
+  text-align: left;
+  border-collapse: collapse;
+}
+.divTable.greyTable .divTableCell, .divTable.greyTable .divTableHead {
+  //border: 0px solid #fff;
+  padding: 2px 3px;
+}
+.divTable.greyTable .divTableBody .divTableCell {
+  font-size: 11px;
+  font-weight: bold;
+}
+.divTable.greyTable .divTableRow:nth-child(even) {
+  //background: #fff;
+}
+/* DivTable.com */
+.divTable{ display: table; }
+.divTableRow { display: table-row; }
+.divTableHeading { display: table-header-group;}
+.divTableCell, .divTableHead { display: table-cell;}
+.divTableHeading { display: table-header-group;}
+.divTableFoot { display: table-footer-group;}
+.divTableBody { display: table-row-group;}

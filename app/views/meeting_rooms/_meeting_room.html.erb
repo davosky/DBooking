@@ -1,0 +1,15 @@
+<div class='divTableCell'><%= meeting_room.code %></div>
+<div class='divTableCell'>
+    <%= link_to meeting_room do %>
+    <%= meeting_room.name %>
+    <% end %>
+</div>
+<div class='divTableCell'><%= meeting_room.description %></div>
+<div class='divTableCell'>
+    <%= link_to edit_meeting_room_path(meeting_room), remote: true do %>
+    <i class='fas fa-edit'></i>
+    <% end %>
+    <%= link_to meeting_room, method: :delete, data: { confirm: 'Sei sicura/o di voler eliminare la Sala corrente?' } do %>
+    <i class='fas fa-trash-alt'></i>
+    <% end %>
+</div>

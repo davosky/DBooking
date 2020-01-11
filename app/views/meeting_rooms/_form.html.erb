@@ -1,0 +1,34 @@
+<%= form_with(model: meeting_room, remote: true) do |form| %>
+<% if meeting_room.errors.any? %>
+<div id='error_explanation'>
+  <h2><%= pluralize(meeting_room.errors.count, 'error') %> prohibited this meeting_room from being saved:</h2>
+
+  <ul>
+    <% meeting_room.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class='field'>
+  <%= form.label :code %>
+  <%= form.number_field :code, class: 'form-control' %>
+</div>
+
+<div class='field'>
+  <%= form.label :name %>
+  <%= form.text_field :name, class: 'form-control' %>
+</div>
+
+<div class='field'>
+  <%= form.label :description %>
+  <%= form.text_area :description, class: 'form-control' %>
+</div>
+<br />
+<div class='form-group'>
+  <%= button_tag(type: 'submit', class: 'btn btn-success btn-sm font-lite') do %>
+  <i class='fas fa-save'></i>&nbsp;&nbsp;SALVA
+  <% end %>
+</div>
+<% end %>

@@ -1,0 +1,3 @@
+document.getElementById('<%= dom_id(@meeting_room, 'inline_form') %>').remove()
+document.getElementById('<%= dom_id(@meeting_room) %>').innerHTML = '<%= j render @meeting_room %>'
+document.getElementById('<%= dom_id(@meeting_room) %>').style.display = 'table-row'
