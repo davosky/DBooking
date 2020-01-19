@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-class BigRoom < ApplicationRecord
+class SmallRoom < ApplicationRecord
   belongs_to :category, optional: true
 
   before_create :set_id
   def set_id
-    last_id = BigRoom.maximum(:id)
+    last_id = SmallRoom.maximum(:id)
     self.id = last_id.to_i + 1
   end
 

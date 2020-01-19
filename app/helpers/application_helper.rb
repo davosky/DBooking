@@ -12,4 +12,12 @@ module ApplicationHelper
   def admin?
     current_user.user_type == 'admin'
   end
+
+  def manager?
+    current_user.user_type == 'manager'
+  end
+
+  def regular?
+    current_user.user_type == 'regular'
+  end
 end

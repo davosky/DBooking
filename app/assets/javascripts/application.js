@@ -15,8 +15,19 @@
 //= require turbolinks
 //= require jquery
 //= require bootstrap
+//= require bootstrap-datepicker
+//= require moment
+//= require bootstrap-datetimepicker
 //= require_tree .
 
 $(function () {
     $('[data-toggle="tooltip"]').tooltip()
 })
+
+$(document).ready(function () {
+    $('.datepicker').datepicker({
+        language: 'it',
+        todayBtn: 'linked',
+        orientation: 'bottom auto'
+    });
+});

@@ -1,21 +1,47 @@
+<% if can? :manage, @big_room %>
 <% if big_room.booked == 'NO' %>
 <div class='divTableCell'>
-    <strong class='text-success'>
+    <%= link_to edit_big_room_path(big_room), remote: true, title: '<em>Prenota&nbsp;</em>', 'data-toggle' => 'tooltip', 'data-html' => 'true', class: 'btn btn-success btn-xs btn-block' do %>
+    <strong>
         <%= l(big_room.start_time, format: '%H:%M') %>
         -
         <%= l(big_room.end_time, format: '%H:%M') %>
     </strong>
-</div>
-<div class='divTableCell'>
-    <%= link_to edit_big_room_path(big_room), remote: true, class: 'text-success', title: '<em>Prenota&nbsp;</em>', 'data-toggle' => 'tooltip', 'data-html' => 'true' do %>
-    <i class='fas fa-edit'></i>
     <% end %>
 </div>
 <% else %>
 <div class='divTableCell'>
-    <strong class='text-primary' data-toggle='tooltip' data-html='true'
-        title='<em>Prenotato da:&nbsp;</em> <b>&nbsp;<%= big_room.category %></b>'>
-        PRENOTATO
-    </strong>
+    <button type='button' class='btn btn-primary btn-xs btn-block' title='<em>Prenotato da:&nbsp;</em>
+        <b>
+        &nbsp;<%= big_room.category.name if big_room.category_id.present? %>
+        <br /><%= big_room.booking_person if big_room.booking_person.present? %>
+        <br /><%= big_room.booking_reason if big_room.booking_reason.present? %>
+        </b>' data-toggle='tooltip' data-html='true'>
+        <%= link_to 'PRENOTATO', edit_big_room_path(big_room), remote: true, class: 'text-white' %>
+    </button>
 </div>
+<% end %>
+<% else %>
+<% if big_room.booked == 'NO' %>
+<div class='divTableCell'>
+    <span title='<em>Libero&nbsp;</em>' data-toggle='tooltip' data-html='true' class='btn btn-success btn-xs btn-block'>
+        <strong>
+            <%= l(big_room.start_time, format: '%H:%M') %>
+            &nbsp;
+            <%= l(big_room.end_time, format: '%H:%M') %>
+        </strong>
+    </span>
+</div>
+<% else %>
+<div class='divTableCell'>
+    <span class='btn btn-primary btn-xs btn-block' title='<em>Prenotato da:&nbsp;</em>
+        <b>
+        &nbsp;<%= big_room.category.name if big_room.category_id.present? %>
+        <br /><%= big_room.booking_person if big_room.booking_person.present? %>
+        <br /><%= big_room.booking_reason if big_room.booking_reason.present? %>
+        </b>' data-toggle='tooltip' data-html='true'>
+        Prenotato
+    </span>
+</div>
+<% end %>
 <% end %>

@@ -13,81 +13,30 @@ RailsAdmin.config do |config|
     visible true
     label 'Utente'
     label_plural 'Utenti'
-    configure :name do
-      label 'Nome'
-    end
-    configure :surname do
-      label 'Cognome:'
-    end
-    configure :office do
-      label 'Ufficio:'
-    end
-    configure :user_type do
-      label 'Tipologia utente:'
-    end
-    configure :category do
-      label 'Categoria:'
-    end
-    configure :province do
-      label 'Provincia:'
-    end
-    configure :created_at do
-      label 'Creato il:'
-    end
-    configure :updated_at do
-      label 'Aggiornato il:'
-    end
+  end
+
+  config.model 'Category' do
+    visible true
+    label 'Categoria'
+    label_plural 'Categorie'
   end
 
   config.model 'MeetingRoom' do
-    visible true
+    visible false
     label 'Sala Prenotabile'
     label_plural 'Sale Prenotabili'
-    configure :code do
-      label 'Codice'
-    end
-    configure :name do
-      label 'Nome:'
-    end
-    configure :description do
-      label 'Descrizione:'
-    end
-    configure :created_at do
-      label 'Creato il:'
-    end
-    configure :updated_at do
-      label 'Aggiornato il:'
-    end
   end
 
   config.model 'BigRoom' do
     visible true
     label 'Prenotazione SC'
-    label_plural 'Prenotazioni Salone Conferenze'
-    configure :name do
-      label 'Codice'
-    end
-    configure :start_time do
-      label 'Data e ora inizio:'
-    end
-    configure :end_time do
-      label 'Data e ora fine:'
-    end
-    configure :bookable do
-      label 'Prenotabile:'
-    end
-    configure :booked do
-      label 'Prenotata:'
-    end
-    configure :category do
-      label 'Categoria:'
-    end
-    configure :created_at do
-      label 'Creato il:'
-    end
-    configure :updated_at do
-      label 'Aggiornato il:'
-    end
+    label_plural 'Prenotazioni SC'
+  end
+
+  config.model 'SmallRoom' do
+    visible true
+    label 'Prenotazione SR'
+    label_plural 'Prenotazioni SR'
   end
 
   config.actions do

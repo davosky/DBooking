@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @small_room.name %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @small_room.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @small_room.end_time %>
+</p>
+
+<p>
+  <strong>Bookable:</strong>
+  <%= @small_room.bookable %>
+</p>
+
+<p>
+  <strong>Booked:</strong>
+  <%= @small_room.booked %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @small_room.category %>
+</p>
+
+<%= link_to 'Edit', edit_small_room_path(@small_room) %> |
+<%= link_to 'Back', small_rooms_path %>

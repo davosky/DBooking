@@ -1,0 +1,36 @@
+<h4>
+    <%= inline_svg_tag('big_room_logo.svg', size: '90px * 46px', preserve_aspect_ratio: 'xMaxYMax meet') %>
+    &nbsp;
+    <strong>
+        Salone Conferenze
+    </strong>
+</h4>
+<hr class='hr-primary' />
+<br />
+<%= search_form_for @q, url: mobile_index_big_rooms_path do |form| %>
+<strong>
+    Inserisci la data da cercare:
+</strong>
+<br />
+<%= form.search_field(:start_time_date_equals, placeholder: t(:date_format), class: 'datepicker form-control') %>
+<br />
+<div class='form-group'>
+    <%= button_tag(type: 'submit', class: 'btn btn-primary btn-sm btn-block') do %>
+    <i class='fas fa-search'></i>&nbsp;&nbsp;CERCA e PRENOTA
+    <% end %>
+</div>
+<% end %>
+<br />
+<% @big_rooms.each do |big_room| %>
+<%= big_room.start_time %>&nbsp;<%= big_room.end_time %>
+<br />
+<% end %>
+<script>
+    $(document).ready(function () {
+        $('.datepicker').datepicker({
+            language: 'it',
+            todayBtn: 'linked',
+            orientation: 'bottom auto'
+        });
+    });
+</script>

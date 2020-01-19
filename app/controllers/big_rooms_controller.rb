@@ -7,6 +7,19 @@ class BigRoomsController < ApplicationController
     @big_rooms = BigRoom.all.where(bookable: 'SI')
   end
 
+  def index_regular
+    @big_rooms = BigRoom.all.where(bookable: 'SI')
+  end
+
+  def mobile_index
+    @q = BigRoom.ransack(params[:q])
+    @big_rooms = @q.result(distinct: true).order(start_time: 'ASC').where(bookable: 'SI').limit(11)
+    respond_to do |format|
+      format.html
+      format.json
+    end
+  end
+
   def show; end
 
   def new
@@ -19,7 +32,7 @@ class BigRoomsController < ApplicationController
     @big_room = BigRoom.new(big_room_params)
     respond_to do |format|
       if @big_room.save
-        format.html { redirect_to @big_room, notice: 'Big room was successfully created.' }
+        format.html { redirect_to @big_rooms, notice: 'Big room was successfully created.' }
         format.json { render :show, status: :created, location: @big_room }
       else
         format.html { render :new }
@@ -29,8 +42,6 @@ class BigRoomsController < ApplicationController
   end
 
   def update
-    @user = current_user
-    @big_room.category = @user.category + ' ' + @user.surname
     respond_to do |format|
       if @big_room.update(big_room_params)
         format.js {}
@@ -39,7 +50,7 @@ class BigRoomsController < ApplicationController
       else
         format.js {}
         format.html { render :edit }
-        format.json { render json: @big_rooms.errors, status: :unprocessable_entity }
+        format.json { render json: @big_room.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -59,6 +70,6 @@ class BigRoomsController < ApplicationController
   end
 
   def big_room_params
-    params.require(:big_room).permit(:name, :start_time, :end_time, :bookable, :booked, :category)
+    params.require(:big_room).permit(:name, :start_time, :end_time, :bookable, :booked, :category_id, :booking_reason, :booking_person)
   end
 end

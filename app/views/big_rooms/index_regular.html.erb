@@ -1,0 +1,27 @@
+<h3>
+    <%= inline_svg_tag('big_room_logo.svg', size: '90px * 36px', preserve_aspect_ratio: 'xMaxYMax meet') %>
+    &nbsp;&nbsp;&nbsp;Salone Conferenze (regular)
+</h3>
+<hr class='hr-primary'>
+<!-- CALENDAR -->
+<%= week_calendar events: @big_rooms, :start_day => :monday do |date, big_rooms| %>
+<small>
+    <strong>
+        <%= l(date, format: '%A %d %B %Y') %>
+    </strong>
+</small>
+<% big_rooms.each do |big_room| %>
+<div class='simple-calendar'>
+    <div class='divTable greyTable'>
+        <%= content_tag :div, class: 'divTableRow', id: dom_id(big_room) do %>
+        <%= render 'big_room_regular' %>
+        <% end %>
+    </div>
+</div>
+<% end %>
+<% end %>
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+</script>

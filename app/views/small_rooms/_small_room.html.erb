@@ -1,0 +1,47 @@
+<% if can? :manage, @small_room %>
+<% if small_room.booked == 'NO' %>
+<div class='divTableCell'>
+    <%= link_to edit_small_room_path(small_room), remote: true, title: '<em>Prenota&nbsp;</em>', 'data-toggle' => 'tooltip', 'data-html' => 'true', class: 'btn btn-success btn-xs btn-block' do %>
+    <strong>
+        <%= l(small_room.start_time, format: '%H:%M') %>
+        -
+        <%= l(small_room.end_time, format: '%H:%M') %>
+    </strong>
+    <% end %>
+</div>
+<% else %>
+<div class='divTableCell'>
+    <button type='button' class='btn btn-primary btn-xs btn-block' title='<em>Prenotato da:&nbsp;</em>
+        <b>
+        &nbsp;<%= small_room.category.name if small_room.category_id.present? %>
+        <br /><%= small_room.booking_person if small_room.booking_person.present? %>
+        <br /><%= small_room.booking_reason if small_room.booking_reason.present? %>
+        </b>' data-toggle='tooltip' data-html='true'>
+        <%= link_to 'PRENOTATO', edit_small_room_path(small_room), remote: true, class: 'text-white' %>
+    </button>
+</div>
+<% end %>
+<% else %>
+<% if small_room.booked == 'NO' %>
+<div class='divTableCell'>
+    <span title='<em>Libero&nbsp;</em>' data-toggle='tooltip' data-html='true' class='btn btn-success btn-xs btn-block'>
+        <strong>
+            <%= l(small_room.start_time, format: '%H:%M') %>
+            &nbsp;
+            <%= l(small_room.end_time, format: '%H:%M') %>
+        </strong>
+    </span>
+</div>
+<% else %>
+<div class='divTableCell'>
+    <span class='btn btn-primary btn-xs btn-block' title='<em>Prenotato da:&nbsp;</em>
+        <b>
+        &nbsp;<%= small_room.category.name if small_room.category_id.present? %>
+        <br /><%= small_room.booking_person if small_room.booking_person.present? %>
+        <br /><%= small_room.booking_reason if small_room.booking_reason.present? %>
+        </b>' data-toggle='tooltip' data-html='true'>
+        Prenotato
+    </span>
+</div>
+<% end %>
+<% end %>

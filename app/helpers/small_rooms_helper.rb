@@ -1,0 +1,2 @@
+module SmallRoomsHelper
+end

@@ -1,22 +1,22 @@
 <h3>
-  <%= inline_svg_tag('big_room_logo.svg', size: '90px * 36px', preserve_aspect_ratio: 'xMaxYMax meet') %>
+  <%= inline_svg_tag('small_room_logo.svg', size: '90px * 36px', preserve_aspect_ratio: 'xMaxYMax meet') %>
   <strong>
     &nbsp;&nbsp;&nbsp;Salone Conferenze
   </strong>
 </h3>
 <hr class='hr-primary'>
 <!-- CALENDAR -->
-<%= week_calendar events: @big_rooms, :start_day => :monday do |date, big_rooms| %>
+<%= week_calendar events: @small_rooms, :start_day => :monday do |date, small_rooms| %>
 <small>
   <strong>
     <%= l(date, format: '%A %d %B %Y') %>
   </strong>
 </small>
-<% big_rooms.each do |big_room| %>
+<% small_rooms.each do |small_room| %>
 <div class='simple-calendar'>
   <div class='divTable greyTable'>
-    <%= content_tag :div, class: 'divTableRow', id: dom_id(big_room) do %>
-    <%= render big_room %>
+    <%= content_tag :div, class: 'divTableRow', id: dom_id(small_room) do %>
+    <%= render small_room %>
     <% end %>
   </div>
 </div>

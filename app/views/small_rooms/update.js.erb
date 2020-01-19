@@ -1,0 +1,7 @@
+document.getElementById('<%= dom_id(@small_room, 'inline_form') %>').remove()
+document.getElementById('<%= dom_id(@small_room) %>').innerHTML = '<%= j render @small_room %>'
+document.getElementById('<%= dom_id(@small_room) %>').style.display = 'table-row'
+
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
