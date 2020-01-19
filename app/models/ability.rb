@@ -9,7 +9,7 @@ class Ability
         can :manage, :all
       elsif user.user_type == 'manager'
         can :manage, BigRoom
-        can :manage, MeetingRoom
+        can :nanage, SmallRoom
       elsif user.user_type == 'regular'
         can :read, :all
       end
