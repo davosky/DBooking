@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class SmallRoomsController < ApplicationController
+  load_and_authorize_resource
+
   before_action :set_small_room, only: %i[show edit update destroy]
 
   def index
