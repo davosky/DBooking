@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 class BigRoomsController < ApplicationController
-  load_and_authorize_resource
-
   before_action :set_big_room, only: %i[show edit update destroy]
+
+  load_and_authorize_resource
 
   def index
     @big_rooms = BigRoom.all.where(bookable: 'SI')
