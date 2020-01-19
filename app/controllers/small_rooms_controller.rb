@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 class SmallRoomsController < ApplicationController
-  before_action :set_small_room, only: %i[show edit update destroy]
-
   load_and_authorize_resource
+
+  before_action :set_small_room, only: %i[show edit update destroy]
 
   def index
     @small_rooms = SmallRoom.all.where(bookable: 'SI')
