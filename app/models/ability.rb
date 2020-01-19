@@ -5,14 +5,12 @@ class Ability
 
   def initialize(user)
     if user.present?
-      if user.user_type == 'admin'
-        can :manage, :all
-      elsif user.user_type == 'manager'
+      can :manage, :all if user.user_type == 'admin'
+      if user.user_type == 'manager'
         can :manage, BigRoom
         can :nanage, SmallRoom
-      elsif user.user_type == 'regular'
-        can :read, :all
       end
+      can :read, :all if user.user_type == 'regular'
     end
   end
 end
